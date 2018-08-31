@@ -1,0 +1,45 @@
+CREATE TABLE IF NOT EXISTS `FRTTCPlayers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(60) NOT NULL,
+  `handicap` decimal(2) NOT NULL,
+  `singlegamesplayed` int(11) NOT NULL,
+  `singlegameswon` int(11) NOT NULL,
+  `doublegamesplayed` int(11) NOT NULL,
+  `doublegameswon` int(11) NOT NULL,
+  `joined` datetime NOT NULL,
+  `assigned` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `FRTTCDoublesSetup` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `p1t1` int(11) NOT NULL,
+  `p2t1` int(11) NOT NULL,
+  `p1t2` int(11) NOT NULL,
+  `p2t2` int(11) NOT NULL,
+  `t1name` varchar(60) NOT NULL,
+  `t2name` varchar(60) NOT NULL,
+  `gamename` varchar(60) NOT NULL,
+  `starttime` datetime NULL,
+  `endtime` datetime NULL,
+  `teamwhoserves` tinyint(1) NOT NULL,
+  `gamelength` int(2) NOT NULL,
+  `servicelength` int(2) NOT NULL,
+  `bestof` int(2) NOT NULL,
+  `clearvalue` int(2) NOT NULL,
+  `gamecreated` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+CREATE TABLE IF NOT EXISTS `FRTTCDoublesGame` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `playerwhowonpoint` int(11) NOT NULL,
+  `playerwhoserved` int(11) NOT NULL,
+  `teamwhowonpoint` int(11) NOT NULL,
+  `time` datetime NOT NULL,
+  `match` int(11) NOT NULL,
+  `round` int(2) NOT NULL,
+  `position` int(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

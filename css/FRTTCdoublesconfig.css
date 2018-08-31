@@ -1,0 +1,47 @@
+input[type=text] {
+    width: 300px;
+    height: 50px;
+	font-size: 34px;
+}
+
+select {
+    width: 300px;
+    height: 500px;
+	font-size: 34px;
+}
+
+input[id=CreateMatch] {
+    width: 220px;
+    height: 50px;
+	font-size: 34px;
+}
+
+input[id=ADDDateTime] {
+    width: 50px;
+    height: 50px;
+	font-size: 34px;
+}
+
+input[id=Player1ADD], input[id=Player2ADD], input[id=Player3ADD], input[id=Player4ADD] {
+    width: 50px;
+    height: 50px;
+	font-size: 34px;
+}
+
+input[id=Player1REMOVE], input[id=Player2REMOVE], input[id=Player3REMOVE], input[id=Player4REMOVE] {
+    width: 50px;
+    height: 50px;
+	font-size: 34px;
+}
+
+select[id=BestOfGames], select[id=LengthOfGames], select[id=ServiceLength], select[id=NumberOfPointsClear]  {
+    width: 100px;
+    height: 50px;
+	font-size: 34px;
+}
+
+input[id=TeamServing]  {
+    border: 0px;
+    width: 100%;
+    height: 2em;
+}

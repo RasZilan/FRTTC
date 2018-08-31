@@ -1,0 +1,102 @@
+1 = server
+
+2 = reciever
+
+top left , bottom left , top right , bottom right
+
+normal services
+0120
+0120
+0210
+0210
+
+2 clear points
+0120
+0210
+
+player 1 team 1 = 1
+player 2 team 1 = 2
+player 1 team 2 = 3
+player 2 team 2 = 4
+
+ie	13
+	24
+top left player 1 team 1, bottom left player 2 team 1 , top right player 1 team 2 , bottom right player 2 team 2
+
+normal services
+
+1	-3	=	1n2s3r4n   (where 2,4,5,8 digit represent state of service and s = server r = reciever n = neither serving or recieving)
+2+	 4
+
+1	-3	=	1n2s3r4n
+2+	 4
+__________
+2	+3	=	2n1r3s4n
+1-	 4
+
+2	+3	=	2n1r3s4n
+1-	 4
+__________
+2	-4	=	2n1s4r3n
+1+	 3
+
+2	-4
+1+	 3	=	2n1s4r3n
+
+__________
+1	+4	=	1n2r4s3n
+2-	 3
+
+1	+4
+2-	 3	=	1n2r4s3n
+
+__________
+1	-3	REPEAT
+2+	 4
+
+1	-3
+2+	 4
+
+
+_____________________________________
+Step through Array for normal doubles service team 1 serves first
+1n2s3r4n
+1n2s3r4n
+2n1r3s4n
+2n1r3s4n
+2n1s4r3n
+2n1s4r3n
+1n2r4s3n
+1n2r4s3n
+
+if team 1 or 2 have 11 points and 2 points difference game ends
+
+if team 1 or 2 have 11 points and 1 points difference game follows following pattern until there is 2 points difference and then winner is declared
+1n2s3r4n
+2n1r3s4n
+2n1s4r3n
+1n2r4s3n
+
+_____________________________________
+alternatively if team 2 serves first then
+1n2r3s4n
+1n2r3s4n
+1n2s4r3n
+1n2s4r3n
+2n1r4s3n
+2n1r4s3n
+2n1s3r4n
+2n1s3r4n
+
+if team 1 or 2 have 11 points and 2 points difference game ends
+
+if team 1 or 2 have 11 points and 1 points difference game follows following pattern until there is 2 points difference and then winner is declared
+1n2r3s4n
+1n2s4r3n
+2n1r4s3n
+2n1s3r4n
+
+
+
+
+
