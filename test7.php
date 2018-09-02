@@ -1,7 +1,6 @@
 <?php
-require_once 'core/init.php';
 
-function GetPlayerPosition($teamthatservedfirst, $team1points, $team2points, $matchlength, $matchposition, $numberofclearpoints, $servicelength, $counter, $SwitchoverPos) {
+ function GetPlayerPosition1($teamthatservedfirst, $team1points, $team2points, $matchlength, $matchposition, $numberofclearpoints, $servicelength, $counter) {
 
 
 if($team1points > $team2points){
@@ -55,13 +54,9 @@ if($teamthatservedfirst == 1){
 	
 	$numrepeats = $counter % $i;
 	
-	if(!isset($SwitchoverPos) or ($SwitchoverPos == '')){
 			$j = 'serve' . $numrepeats;
-	}else{
-		$j = $SwitchoverPos;
-	}		
-			if($j == 'serve0'){$j = 'serve8';}
 			
+			if($j == 'serve0'){$j = 'serve8';}
 		
 	//echo 'using rulset 2 teamthatservedfirst 1:';
 	$f=0;
@@ -200,168 +195,6 @@ if($teamthatservedfirst == 1){
 
 }
 
-
-
-
-if($teamthatservedfirst == 2){
-	
-	//echo 'using rulset 1 teamthatservedfirst 2:';
-	$i=0;
-	foreach ($GLOBALS['config']['doublesteam2servesfirstservicelength2'] as $k => $v) {
-	$i++;
-	}
-	
-	$numrepeats = $counter % $i;
-	
-	if(!isset($SwitchoverPos) or ($SwitchoverPos == '')){
-			$j = 'serve' . $numrepeats;
-	}else{
-		$j = $SwitchoverPos;
-	}		
-			
-			if($j == 'serve0'){$j = 'serve8';}
-		
-	//echo 'using rulset 2 teamthatservedfirst 2:';
-	$f=0;
-	foreach ($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j] as $k => $v) {
-	$f++;
-	}
-	
-	$numrepeats = $counter % $f;
-	
-			$g = 'serve' . $numrepeats;
-			
-			if($g == 'serve0'){$g = 'serve4';}
-
-
-			
-		if($matchruleset == 1){
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j]['serve1'],0,1) == 1) {
-				$pos1 = 'player2';
-			}
-		}
-		if($matchruleset == 2){
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j][$g],0,1) == 1) {
-				$pos1 = 'player2';
-			}
-		}	
-			
-			
-		if($matchruleset == 1){		
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j]['serve1'],0,1) == 2) {
-				$pos1 = 'player1';
-			}
-		}
-		if($matchruleset == 2){		
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j][$g],0,1) == 2) {
-				$pos1 = 'player1';
-			}
-		}
-
-		
-		
-		if($matchruleset == 1){		
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j]['serve1'],2,1) == 1) {
-				$pos2 = 'player2';
-			}
-		}
-		if($matchruleset == 2){		
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j][$g],2,1) == 1) {
-				$pos2 = 'player2';
-			}
-		}		
-		
-			
-
-		if($matchruleset == 1){		
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j]['serve1'],2,1) == 2) {
-				$pos2 = 'player1';
-			}
-		}
-		if($matchruleset == 2){		
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j][$g],2,1) == 2) {
-				$pos2 = 'player1';
-			}
-		}	
-
-
-		if($matchruleset == 1){		
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j]['serve1'],4,1) == 3) {
-				$pos3 = 'player3';
-			}
-		}
-		if($matchruleset == 2){		
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j][$g],4,1) == 3) {
-				$pos3 = 'player3';
-			}
-		}	
-		
-
-		if($matchruleset == 1){		
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j]['serve1'],4,1) == 4) {
-				$pos3 = 'player4';
-			}
-		}
-		if($matchruleset == 2){		
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j][$g],4,1) == 4) {
-				$pos3 = 'player4';
-			}
-		}	
-
-
-		if($matchruleset == 1){		
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j]['serve1'],6,1) == 3) {
-				$pos4 = 'player3';
-			}
-		}
-		if($matchruleset == 2){		
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j][$g],6,1) == 3) {
-				$pos4 = 'player3';
-			}
-		}		
-
-
-		if($matchruleset == 1){		
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j]['serve1'],6,1) == 4) {
-				$pos4 = 'player4';
-			}
-		}
-		if($matchruleset == 2){		
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j][$g],6,1) == 4) {
-				$pos4 = 'player4';
-			}
-		}	
-		
-		
-		if($matchruleset == 1){		
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j]['serve1'],3,1) == 's') {
-				$teampos = 'team1';
-			}
-		}
-		if($matchruleset == 2){		
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j][$g],3,1) == 's') {
-				$teampos = 'team1';
-			}
-		}			
-
-			
-		if($matchruleset == 1){		
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j]['serve1'],5,1) == 's') {
-				$teampos = 'team2';
-			}
-		}
-		if($matchruleset == 2){		
-			if (substr($GLOBALS['config']['doublesteam2servesfirstservicelength2'][$j][$g],5,1) == 's') {
-				$teampos = 'team2';
-			}
-		}		
-
-}
-
-
-
-
-
 //Calculates if Team 1 has won the match and sets $matchwinner to 1 if they have otherwise it sets it to 0
 if(($team1points >= $matchlength) && ((isset($differenceinpoints)) && ($differenceinpoints >= $numberofclearpoints)) && ($team1points > $team2points)) {
 	$matchwinner = 1;
@@ -378,11 +211,46 @@ if(($team2points >= $matchlength) && ((isset($differenceinpoints)) && ($differen
 	$matchwinner = 0;
 }
 
-if((isset($matchruleset)) && ($matchruleset == 2)){ 
+
 return array($pos1, $pos2, $pos3, $pos4, $numrepeats, $j, $teampos, $i, $matchwinner);
-}
-if((isset($matchruleset)) && ($matchruleset == 1)){ 
-return array($pos1, $pos2, $pos3, $pos4, $numrepeats, '', $teampos, $i, $matchwinner);
-}
 
 }
+ 
+ 
+ 
+require_once 'core/init.php';
+
+
+$teamthatservedfirst = 1; 
+$team1points = 10; 
+$team2points = 1; 
+$matchlength = 11;
+$matchposition = 6;
+$numberofclearpoints = 2;
+$servicelength = 2;
+
+$maxvalue = 25;
+
+
+//GetPlayerPosition($teamthatservedfirst,$team1points,$team2points,$matchlength,$matchposition,$numberofclearpoints,$servicelength,$counter);
+for($inc = 1; $inc <= $maxvalue; $inc++){ 
+$team1points = $inc;
+$team2points = $inc;
+
+
+$get_val = GetPlayerPosition($teamthatservedfirst,$team1points,$team2points,$matchlength,$matchposition,$numberofclearpoints,$servicelength,$inc);
+ 
+echo $get_val[0];
+echo $get_val[1];
+echo $get_val[2];
+echo $get_val[3];
+
+echo ' &nbsp; &nbsp;  &nbsp;  &nbsp;  '.$get_val[4];
+echo ' &nbsp; &nbsp; ';
+echo '  '.$get_val[5];
+echo '  '. $inc .' &nbsp; &nbsp; ';
+
+echo '  '.$get_val[7].' &nbsp; &nbsp; ';
+echo ' team1points= '.$team1points.' team2points= '.$team2points.'<br>';
+}
+?>

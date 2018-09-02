@@ -25,18 +25,59 @@ $GLOBALS['config'] = array(
 	//if team 1 or 2 have 11 points and 2 points difference game ends
 	
 	//Step through Array for normal doubles service team 1 serves first
-    'doublesteam1servesfirst' => array(
-        'serve1' => '1n2s3r4n',
-		'serve2' => '1n2s3r4n',
-        'serve3' => '2n1r3s4n',
-        'serve4' => '2n1r3s4n',
-        'serve5' => '2n1s4r3n',
-        'serve6' => '2n1s4r3n',
-        'serve7' => '1n2r4s3n',
-        'serve8' => '1n2r4s3n'
+    'doublesteam1servesfirstservicelength2' => array(
+       'serve1' => array(
+			'serve1' => '1n2s3r4n',
+			'serve2' => '2n1r3s4n',
+			'serve3' => '2n1s4r3n',
+			'serve4' => '1n2r4s3n'
+		),
+		'serve2' => array(
+			'serve1' => '1n2s3r4n',
+			'serve2' => '2n1r3s4n',
+			'serve3' => '2n1s4r3n',
+			'serve4' => '1n2r4s3n'
+		),
+        'serve3' => array(
+			'serve1' => '2n1r3s4n',
+			'serve2' => '2n1s4r3n',
+			'serve3' => '1n2r4s3n',	
+			'serve4' => '1n2s3r4n'
+		),
+        'serve4' => array(
+			'serve1' => '2n1r3s4n',
+			'serve2' => '2n1s4r3n',
+			'serve3' => '1n2r4s3n',	
+			'serve4' => '1n2s3r4n'
+		),
+        'serve5' => array(
+			'serve1' => '2n1s4r3n',
+			'serve2' => '1n2r4s3n',	
+			'serve3' => '1n2s3r4n',
+			'serve4' => '2n1r3s4n'
+		),
+        'serve6' => array(
+			'serve1' => '2n1s4r3n',
+			'serve2' => '1n2r4s3n',	
+			'serve3' => '1n2s3r4n',
+			'serve4' => '2n1r3s4n'
+		),
+        'serve7' => array(
+			'serve1' => '1n2r4s3n',
+			'serve2' => '1n2s3r4n',
+			'serve3' => '2n1r3s4n',
+			'serve4' => '2n1s4r3n'
+		),
+        'serve8' => array(
+			'serve1' => '1n2r4s3n',
+			'serve2' => '1n2s3r4n',
+			'serve3' => '2n1r3s4n',
+			'serve4' => '2n1s4r3n'
+		)
     ),
+	
 	//if team 1 or 2 have 11 points and 1 points difference game follows following pattern until there is 2 points difference and then winner is declared
-    'doublesteam1servesfirst2clearpoints' => array(
+    'doublesteam1servesfirstservicelength1' => array(
         'serve1' => '1n2s3r4n',
 		'serve2' => '2n1r3s4n',
         'serve3' => '2n1s4r3n',
@@ -44,19 +85,59 @@ $GLOBALS['config'] = array(
     ),
 
 	//alternatively if team 2 serves first then
-    'doublesteam2servesfirst' => array(
-        'serve1' => '1n2r3s4n',
-		'serve2' => '1n2r3s4n',
-        'serve3' => '1n2s4r3n',
-        'serve4' => '1n2s4r3n',
-        'serve5' => '2n1r4s3n',
-        'serve6' => '2n1r4s3n',
-        'serve7' => '2n1s3r4n',
-        'serve8' => '2n1s3r4n'
+    'doublesteam2servesfirstservicelength2' => array(
+        'serve1' => array(
+			'serve1' => '1n2r3s4n',
+			'serve2' => '1n2s4r3n',
+			'serve3' => '2n1r4s3n',
+			'serve4' => '2n1s3r4n'
+		),
+		'serve2' => array(
+			'serve1' => '1n2r3s4n',
+			'serve2' => '1n2s4r3n',
+			'serve3' => '2n1r4s3n',
+			'serve4' => '2n1s3r4n'
+		),
+        'serve3' => array(
+			'serve1' => '1n2s4r3n',
+			'serve2' => '2n1r4s3n',
+			'serve3' => '2n1s3r4n',
+			'serve4' => '1n2r3s4n'
+		),
+        'serve4' => array(
+			'serve1' => '1n2s4r3n',
+			'serve2' => '2n1r4s3n',
+			'serve3' => '2n1s3r4n',
+			'serve4' => '1n2r3s4n'
+		),
+        'serve5' => array(
+			'serve1' => '2n1r4s3n',
+			'serve2' => '2n1s3r4n',
+			'serve3' => '1n2r3s4n',
+			'serve4' => '1n2s4r3n'	
+		),
+        'serve6' => array(
+			'serve1' => '2n1r4s3n',
+			'serve2' => '2n1s3r4n',
+			'serve3' => '1n2r3s4n',
+			'serve4' => '1n2s4r3n'	
+		),
+        'serve7' => array(
+			'serve1' => '2n1s3r4n',
+			'serve2' => '1n2r3s4n',
+			'serve3' => '1n2s4r3n',
+			'serve4' => '2n1r4s3n'	
+		),			
+        'serve8' => array(
+			'serve1' => '2n1s3r4n',
+			'serve2' => '1n2r3s4n',
+			'serve3' => '1n2s4r3n',
+			'serve4' => '2n1r4s3n'	
+		)		
     ),	
 	
 	//if team 1 or 2 have 11 points and 1 points difference game follows following pattern until there is 2 points difference and then winner is declared
-    'doublesteam2servesfirst2clearpoints' => array(
+    'doublesteam2servesfirstservicelength1' => array(
         'serve1' => '1n2r3s4n',
 		'serve2' => '1n2s4r3n',
         'serve3' => '2n1r4s3n',
